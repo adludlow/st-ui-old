@@ -17,10 +17,9 @@ class Login extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div>
-                <form className="login-form" onSubmit={this.props.doLogin}>
+                <form className="login-form" onSubmit={this.props.handleSubmit(this.props.doLogin)}>
                     <Field name="username" type="text"
                         component={renderField} label="Username (eg: acusack@bigballs.com)"
                         validate={[required]}
