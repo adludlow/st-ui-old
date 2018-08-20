@@ -18,6 +18,7 @@ class Login extends Component {
     }
 
     render() {
+      // TODO check token validity
       if(this.props.isLoggedIn === true) {
         return <Redirect to='/' />;
       }
