@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import Team from './components/Team';
+import { loadState } from './localStorage';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-
-    //TODO get logged in user details from local storage.
   };
 
   render() {
+    // TODO check token validity? Or we can rely on a 401 from an API call to determine that.
     if(this.props.isLoggedIn === false) {
       return <Redirect to='/login' />;
     }

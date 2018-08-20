@@ -1,8 +1,12 @@
 import { login } from '../constants/'
+import { loadState } from '../localStorage';
+
+let userDetails = loadState('userDetails') || '';
+let isLoggedIn = loadState('isLoggedIn') || false;
 
 const initialState = {
-  isLoggedIn: false,
-  userDetails: ''
+  isLoggedIn: isLoggedIn,
+  userDetails: userDetails
 };
 
 export default function loginReducer(state = initialState, action) {
