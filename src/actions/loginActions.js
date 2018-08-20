@@ -34,7 +34,7 @@ export function doLogin(creds) {
       if(res.status === 200) {
         const userDetails = res.data;
         dispatch(loginSuccess(userDetails));
-        window.location.href= '/';
+        // TODO store logged in user details in local storage.
       }
       else {
         dispatch(loginFailure('Invalid username or password'));
