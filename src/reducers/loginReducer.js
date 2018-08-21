@@ -16,7 +16,7 @@ export default function loginReducer(state = initialState, action) {
         console.log('Login success');
         return {
           isLoggedIn: true,
-          userDetails: action.userDetails
+          token: action.token
         };
       }
     case login.FAILURE:
