@@ -1,7 +1,9 @@
 import * as loginActions from './loginActions';
+import * as mainMenuActions from './mainMenuActions';
 
 const actions = {
-    loginActions
+  loginActions,
+  mainMenuActions
 };
 
 export default actions;

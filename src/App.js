@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
-import Team from './components/Team';
-import { loadState } from './localStorage';
+import { Redirect } from 'react-router-dom';
+import MainMenu from './components/MainMenu';
 import './App.css';
 
 class App extends Component {
@@ -17,12 +16,7 @@ class App extends Component {
     else {
       return (
         <div className="App">
-          <BrowserRouter>
-            <Switch>
-              <Route path="/" component={Team}/>
-              <Route path="/team" component={Team}/>
-            </Switch>
-          </BrowserRouter>
+          <MainMenu />
         </div>
       );
     }
