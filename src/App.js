@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import MainMenu from './components/MainMenu';
+import MainMenu from './components/NavMenu';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     }
     else {
       return (
-        <div className="App">
+        <div className="App wrapper">
           <MainMenu />
         </div>
       );
