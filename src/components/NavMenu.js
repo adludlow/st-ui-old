@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import actions from '../actions';
 
@@ -33,13 +34,16 @@ class NavMenu extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home</a>
+              <NavLink className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Trade</a>
+              <NavLink className="nav-link" to="/trade">Trade</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Draft</a>
+              <NavLink className="nav-link" to="/draft">Draft</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/admin">Admin</NavLink>
             </li>
           </ul>
         </div>

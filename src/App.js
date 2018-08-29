@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, BrowserRouter, Route } from 'react-router-dom';
+
 import MainMenu from './components/NavMenu';
+import Trade from './components/Trade';
+import Admin from './components/Admin';
+import Draft from './components/Draft';
 import './App.css';
 
 class App extends Component {
@@ -15,9 +19,14 @@ class App extends Component {
     }
     else {
       return (
-        <div className="App wrapper">
-          <MainMenu />
-        </div>
+        <BrowserRouter>
+          <div className="App wrapper">
+              <MainMenu/>
+              <Route path='/trade' component={Trade}/>
+              <Route path='/draft' component={Draft}/>
+              <Route path='/admin' component={Admin}/>
+          </div>
+        </BrowserRouter>
       );
     }
   }
