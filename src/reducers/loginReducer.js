@@ -1,20 +1,29 @@
 import { login } from '../constants/'
+import { loadState } from '../localStorage';
+
+let userDetails = loadState('userDetails') || '';
+let isLoggedIn = loadState('isLoggedIn') || false;
 
 const initialState = {
-  userDetails: ''
+  isLoggedIn: isLoggedIn,
+  userDetails: userDetails
 };
 
 export default function loginReducer(state = initialState, action) {
   switch (action.type) {
     case login.SUCCESS:
       {
-        return { userDetails: action.userDetails };
+        console.log('Login success');
+        return {
+          isLoggedIn: true,
+          token: action.token
+        };
       }
-    case login.FAULURE:
+    case login.FAILURE:
       {
-        return { 
-          ...state, 
-          loginError: action.error 
+        return {
+          isLoggedIn: false,
+          loginError: action.error
         };
       }
   }

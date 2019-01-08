@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { login } from '../constants/'
 import config from '../config/'
+import { saveState } from '../localStorage';
 
-export function loginSuccess(userDetails) {
+export function loginSuccess(token) {
+  saveState('token', token);
+  saveState('isLoggedIn', true);
   return {
     type: login.SUCCESS,
-    userDetails
+    token
   };
 }
 
@@ -21,7 +24,6 @@ export function doLogin(creds) {
   const authStr = 'Basic ' + window.btoa(username+':'+password);
 
   return function(dispatch) {
-    console.log('doLogin');
     // TODO Send progress action
     return axios.get(config.LOGIN_URL, 
       {
@@ -30,11 +32,9 @@ export function doLogin(creds) {
         }
       }
     ).then((res) => {
-      console.log('Response received.');
       if(res.status === 200) {
-        const userDetails = res.data;
-        dispatch(loginSuccess(userDetails));
-        window.location.href= '/';
+        const token = res.data;
+        dispatch(loginSuccess(token));
       }
       else {
         dispatch(loginFailure('Invalid username or password'));

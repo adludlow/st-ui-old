@@ -1,4 +1,15 @@
 export const login = {
   SUCCESS:  'LOGIN/SUCCESS',
   FAILURE:  'LOGIN/FAILURE'
-}
+};
+
+export const mainMenu = {
+  TOGGLE: 'MAIN_MENU/TOGGLE',
+  OPEN: 'MAIN_MENU/OPEN',
+  CLOSE: 'MAIN_MENU/CLOSE'
+};
+
+export const admin = {
+  SYNC_PLAYER_SUCCESS: 'ADMIN/SYNC_PLAYER_SUCCESS',
+  SYNC_PLAYER_FAILURE: 'ADMIN/SYNC_PLAYER_FAILURE'
+};
