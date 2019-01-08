@@ -19,6 +19,7 @@ export class Admin extends Component {
   };
 
   render() {
+    console.log("Admin render()");
     const { selectedFile, busy } = this.state;
     const { onChange, onSubmit } = this;
 

@@ -7,6 +7,7 @@ import './index.css';
 import AppContainer from './App.container';
 import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store';
+import { Admin } from './components/Admin';
 
 const store = configureStore();
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <div>
           <Route exact path='/' component={AppContainer}/>
           <Route path='/login' component={LoginContainer}/>
+          <Route path="/admin" component = {Admin} />
         </div>
       </BrowserRouter>
     </Provider>,
