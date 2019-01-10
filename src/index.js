@@ -4,8 +4,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import LoginContainer from './components/Login.container';
-import './index.css';
 import { Admin } from './components/Admin';
 
 window.onLoad = () => {
@@ -13,9 +11,7 @@ window.onLoad = () => {
     <Provider store={store}>
       <BrowserRouter>
         <div>
-          <Route exact path='/' component={AppContainer}/>
-          <Route path='/login' component={LoginContainer}/>
-          <Route path="/admin" component = {Admin} />
+          <Route exact path="/" component = {Admin} />
         </div>
       </BrowserRouter>
     </Provider>,
